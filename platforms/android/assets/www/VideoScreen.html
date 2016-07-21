@@ -1,0 +1,123 @@
+<!-- 
+Add a Mobile Landing Page to Your Site
+By Sam Dunn
+Build Internet 2011
+http://buildinternet.com/2011/01/add-a-mobile-landing-page-to-your-site
+-->
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;" />
+	
+	
+
+    <title>Adston Cash Video</title>
+    
+    <link rel="stylesheet" href="css/mobile.css"/>
+	<link rel="stylesheet" href="css/main.css"/>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="css/bootstrap.css" >
+	<link rel="stylesheet" href="css/video.css" >
+	<link rel="stylesheet" href="css/bootstrap-social.css" >
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	
+	
+	
+</head>
+<body class="main" ng-app = "video_app" ng-controller = "video-ctrl">
+
+	<header class="height-5 header-png" style="display: table; width:100%">
+	
+							
+		<div class="row">
+			<div class="col-sm-4 col-md-3 sidebar">
+				<div class="mini-submenu">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</div>
+				<div class="list-group">
+					<span href="#" class="list-group-item active text-left">
+						Hi Username
+						<span class="pull-right" id="slide-submenu">
+							<i class="fa fa-times"></i>
+						</span>
+					</span>
+					<a href="VideoScreen.html" class="list-group-item">
+						<i class="fa fa-video-camera"></i> Videos
+					</a>
+					<a href="QueueScreen.html" class="list-group-item">
+						<i class="fa fa-bomb"></i> Queue
+					</a>
+					<a href="#" class="list-group-item">
+						<i class="fa fa-plus"></i> Positive Points
+					</a>
+					<a href="#" class="list-group-item">
+						<i class="fa fa-user"></i> My Page
+					</a>
+					<a href="#" class="list-group-item">
+						<i class="fa fa-trophy"></i> Winners
+					</a>
+					<a href="#" class="list-group-item">
+						<i class="fa fa-share-alt"></i> Invite
+					</a>
+					<a href="#" class="list-group-item">
+						<i class="fa fa-cog"></i> Settings
+					</a>
+					<a href="#" class="list-group-item">
+						<i class="fa fa-sign-out"></i> Log Off
+					</a>
+				</div>
+			</div>
+		</div>
+							
+							
+							
+		<p>Video Screen</p>
+	</header>
+	<div id="video_container" class="container padding-top-px-2" style="height:100%">
+	
+		<div class="row height-100">
+			<div class="col-md-4 col-xs-6 height-30 margin-bottom-px-2" ng-repeat="video in videos_daily track by $index">
+				<div id="1" class="video min-height-px-170" name="video-name" alt="1">
+					<div class="video-header">
+						<div class="header-background">
+							<span class="category padding-left-px-5">{{video.category}}</span>
+							<div ng-click="goToQueue($index)" class="video-close">×</div>
+						</div>
+					</div>
+					<a ng-click="getVideo(video)"><img id="image1" ng-src="{{video.poster_url}}" width="130" height="170"/></a>
+					<div class="video-footer">
+						<div class="footer-background">
+							<div class="title text-left padding-left-px-5">{{video.video_title}}</div>
+							<div class="brand text-right padding-right-px-5">{{video.company_name}}</div>
+							<div class="active_time text-left padding-left-px-5">Active Till</div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+			
+			</div>
+			
+		</div>		
+	</div>
+
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/bootstrap.js" ></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/videoplay.js"></script>	
+</body>
+</html>

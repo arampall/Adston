@@ -1,0 +1,36 @@
+<!-- 
+Add a Mobile Landing Page to Your Site
+By Sam Dunn
+Build Internet 2011
+http://buildinternet.com/2011/01/add-a-mobile-landing-page-to-your-site
+-->
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;" />
+	    
+    <link rel="stylesheet" href="css/mobile.css"/>	
+	<link rel="stylesheet" href="css/video.css" >
+	<style>
+		#giphy{
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		
+	</style>
+</head>
+<body class="video_background" ng-app = "video_play" ng-controller = "play-ctrl">
+	
+	<img ng-src="img/hourglass.gif" id="giphy">
+	<video id="video1" class="fullscreen-bg__video" style="display:none;"></video>		
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	
+	<script type="text/javascript" src="js/play.js"></script>	
+</body>
+</html>

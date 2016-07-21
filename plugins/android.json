@@ -1,0 +1,18 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.proto.Adston"
+        },
+        "cordova.custom.plugins.exitapp": {
+            "PACKAGE_NAME": "com.proto.Adston"
+        }
+    },
+    "dependent_plugins": {}
+}

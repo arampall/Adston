@@ -20,13 +20,16 @@ $(function(){
 })
 
 angular.module('video_queue',[])
-		.controller('queue-ctrl',function($scope,$http,$window,$sce){
+		.controller('queue-ctrl',function($scope,$http,$window,$sce,$filter){
 		var queue = JSON.parse($window.localStorage.getItem("queue_data"));
 		var daily_list = JSON.parse($window.localStorage.getItem("daily_list"));
+		var scheduled_array=JSON.parse($window.localStorage.getItem("scheduled_list"))
 		document.addEventListener("backbutton", backKeyDown, false);
 		$scope.queue_list = queue;	
+		console.log(scheduled_array);
 		$scope.category_list = JSON.parse($window.localStorage.getItem("category_list"));
-		$scope.swapVideo = function(video){
+		$scope.manageVideo = function(video){
+		console.log($window.localStorage.getItem("index"));
 			if ($window.localStorage.getItem("index")) {
 				if($window.confirm("Please confirm?")){
 					var video_old = daily_list[$window.localStorage.getItem("index")];
@@ -42,7 +45,23 @@ angular.module('video_queue',[])
 				else {
 					$window.location = "VideoScreen.html";
 				}
-			//navigator.notification.confirm(message,replace,[title],[buttonLabels]);
+
+			}else{
+				console.log("hi");
+				var timeslots = $filter("filter")(scheduled_array, {video:video});
+				if(timeslots.length!=0){
+					if($window.confirm("Video already scheduled.Change it?")){
+						scheduled_array.splice(scheduled_array.indexOf(timeslots[0]),1);
+						$window.localStorage.setItem("scheduled_list",JSON.stringify(scheduled_array));
+						console.log(scheduled_array);
+						$window.localStorage.setItem("tempVideo",JSON.stringify(video));
+						$window.location="calendar.html";
+					}
+				}
+				else{
+					$window.localStorage.setItem("tempVideo",JSON.stringify(video));
+					$window.location="calendar.html";
+				}			
 			}
 		};
 		

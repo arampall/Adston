@@ -1,0 +1,61 @@
+<!doctype html>
+<html ng-app="calendarEvent">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;" />
+  
+	<link rel="stylesheet" href="css/mobile.css"/>
+	<link rel="stylesheet" href="css/main.css"/>
+	<link rel="stylesheet" href="css/video.css" >
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+	<script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.0.0.js"></script>
+	<script src="js/calendar.js" type="text/javascript"></script>
+	<style>
+		.cal{
+			height:100%;
+			width:100%;
+			padding:0px;
+			margin:0px;
+		}
+		table {
+			width:100%;
+		}
+
+	</style>
+</head>
+<body>
+<div>
+	<div ng-controller='DatepickerDemoCtrl'><!--"DatepickerDemoCtrl-->
+		<fieldset class="cal" ng-disabled="calendardisabled" style="display:inline-block;">
+		<div uib-datepicker ng-model="dt" class="well well-sm grid" datepicker-options="options"></div>
+		<button style="margin-left:200px;margin-bottom:20px;marging-top:5px;" type="button" class="btn btn-primary" ng-click="selectDate()">Set Date</button>
+		</fieldset>
+		<div>
+		<fieldset ng-disabled="timedisabled">
+			<button type="button" id="10:22 am" class="btn btn-success" style="padding-left:8px;padding-right:8px;padding-bottom:0px;padding-top:0px;font-size:11px;" ng-click="getTime($event)">10:22 am</button>
+			<button type="button" id="11:22 am" class="btn btn-success" style="padding-left:8px;padding-right:8px;padding-bottom:0px;padding-top:0px;font-size:11px;" ng-click="getTime($event)">11:22 am</button>
+			<button type="button" id="12:22 pm" class="btn btn-success" style="padding-left:8px;padding-right:8px;padding-bottom:0px;padding-top:0px;font-size:11px;" ng-click="getTime($event)">12:22 pm</button>
+			<button type="button" id="01:22 pm" class="btn btn-success" style="padding-left:8px;padding-right:8px;padding-bottom:0px;padding-top:0px;font-size:11px;" ng-click="getTime($event)">01:22 pm</button></br></br>
+			<button type="button" id="02:22 pm" class="btn btn-success" style="padding-left:8px;padding-right:8px;padding-bottom:0px;padding-top:0px;font-size:11px;" ng-click="getTime($event)">02:22 pm</button>
+			<button type="button" id="03:22 pm" class="btn btn-success" style="padding-left:8px;padding-right:8px;padding-bottom:0px;padding-top:0px;font-size:11px;" ng-click="getTime($event)">03:22 pm</button>
+			<button type="button" id="04:22 pm" class="btn btn-success" style="padding-left:8px;padding-right:8px;padding-bottom:0px;padding-top:0px;font-size:11px;" ng-click="getTime($event)">04:22 pm</button>
+			<button type="button" id="05:22 pm" class="btn btn-success" style="padding-left:8px;padding-right:8px;padding-bottom:0px;padding-top:0px;font-size:11px;" ng-click="getTime($event)">05:22 pm</button></br></br>
+			<button type="button" id="06:22 pm" class="btn btn-success" style="padding-left:8px;padding-right:8px;padding-bottom:0px;padding-top:0px;font-size:11px;" ng-click="getTime($event)">06:22 pm</button>
+			<button type="button" id="07:22 pm" class="btn btn-success" style="padding-left:8px;padding-right:8px;padding-bottom:0px;padding-top:0px;font-size:11px;" ng-click="getTime($event)">07:22 pm</button>
+			<button type="button" id="08:22 pm" class="btn btn-success" style="padding-left:8px;padding-right:8px;padding-bottom:0px;padding-top:0px;font-size:11px;" ng-click="getTime($event)">08:22 pm</button>
+			<button type="button" id="09:22 pm" class="btn btn-success" style="padding-left:8px;padding-right:8px;padding-bottom:0px;padding-top:0px;font-size:11px;" ng-click="getTime($event)">09:22 pm</button></br></br>
+			<button type="button" id="10:22 pm" class="btn btn-success" style="padding-left:8px;padding-right:8px;padding-bottom:0px;padding-top:0px;font-size:11px;" ng-click="getTime($event)">10:22 pm</button></br>
+			<!--<button ng-repeat="button in buttons" class="btn btn-success" ng-click="data.tes = button"><span>{{button}}</span></br></button>-->
+		<button style="margin-left:200px; margin-top:10px;" type="button" class="btn btn-primary" ng-click="selectTime()">Set Time</button>
+		</fieldset>
+		</div>
+</div>
+</div>
+</body>
+</html>

@@ -19,7 +19,7 @@ angular.module('login',[])
                     if(response.data.code==0){
 						console.log(response.data.queue_data);
 						$window.localStorage.setItem("access_token",response.data.access_token);
-						var arr=[],i;
+						var arr=[],scheduled_arr=[],i;
 						for(i=0;i<Object.keys(response.data.queue_data).length;i++){
 							arr.push.apply(arr,response.data.queue_data[Object.keys(response.data.queue_data)[i]]);
 						}
@@ -30,6 +30,7 @@ angular.module('login',[])
 						$window.localStorage.setItem("category_list",JSON.stringify(category_list));
 						$window.localStorage.setItem("daily_list",JSON.stringify(daily_arr));
 						$window.localStorage.setItem("queue_data",JSON.stringify(queue_arr));
+						$window.localStorage.setItem("scheduled_list",JSON.stringify(scheduled_arr));
 						$window.location = "VideoScreen.html";					
                     }
                     else{

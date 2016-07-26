@@ -37,7 +37,7 @@ angular.module('login',[])
 						$window.localStorage.setItem("daily_list",JSON.stringify(daily_arr));
 						$window.localStorage.setItem("queue_data",JSON.stringify(queue_arr));
 						//$window.localStorage.removeItem("scheduled_list");
-						//$window.location = "VideoScreen.html";					
+						$window.location = "VideoScreen.html";					
                     }
                     else{
                         $scope.status = response.data.message;

@@ -11,8 +11,6 @@ http://buildinternet.com/2011/01/add-a-mobile-landing-page-to-your-site
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;" />
 	
-	
-
     <title>Adston Cash Queue</title>
     
     <link rel="stylesheet" href="css/mobile.css"/>
@@ -103,7 +101,7 @@ http://buildinternet.com/2011/01/add-a-mobile-landing-page-to-your-site
 				<h3>{{category}}</h3>
 				<div class = "accordion-container">
 					<div class="row height-100">
-						<div class="col-md-4 col-xs-6 height-30 margin-bottom-px-2" ng-repeat = "video in queue_list | filter:{category:category}:true" ng-click="swapVideo(video)">
+						<div class="col-md-4 col-xs-6 height-30 margin-bottom-px-2" ng-repeat = "video in queue_list | filter:{category:category}:true" ng-click="manageVideo(video)">
 							<div id="1" class="video min-height-px-170" name="video-name" alt="1">							
 								<a><img id="image1" ng-src="{{video.poster_url}}" class="queue_img" width="130" height="170"/></a>							
 								<div class="queue-footer">

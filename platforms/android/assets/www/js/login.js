@@ -3,7 +3,7 @@ angular.module('login',[])
             $httpProvider.defaults.useXDomain = true;
             delete $httpProvider.defaults.headers.common['X-Requested-With'];
         }])
-        .controller('checkLogin',function($scope,$http,$window){
+        .controller('checkLogin',function($scope,$http,$window,$filter){
             $scope.user = {};
 			$scope.user.email_id = "krunal57@gmail.com";
 			$scope.user.user_pass = "krunal";
@@ -17,9 +17,15 @@ angular.module('login',[])
                 })
                 .then(function successCallback(response) {
                     if(response.data.code==0){
-						console.log(response.data.queue_data);
+						console.log(response.data);
 						$window.localStorage.setItem("access_token",response.data.access_token);
-						var arr=[],i;
+						var arr=[],scheduled_arr,i;
+						scheduled_arr = JSON.parse($window.localStorage.getItem("scheduled_list"));
+						/*var today = new Date();
+						var dd = today.getDate();
+						var scheduled_list_arr = $filter("filter")(scheduled_arr, {date:today.getDate()});
+						console.log(scheduled_list_arr);*/
+						
 						for(i=0;i<Object.keys(response.data.queue_data).length;i++){
 							arr.push.apply(arr,response.data.queue_data[Object.keys(response.data.queue_data)[i]]);
 						}
@@ -30,7 +36,8 @@ angular.module('login',[])
 						$window.localStorage.setItem("category_list",JSON.stringify(category_list));
 						$window.localStorage.setItem("daily_list",JSON.stringify(daily_arr));
 						$window.localStorage.setItem("queue_data",JSON.stringify(queue_arr));
-						$window.location = "VideoScreen.html";					
+						//$window.localStorage.removeItem("scheduled_list");
+						//$window.location = "VideoScreen.html";					
                     }
                     else{
                         $scope.status = response.data.message;

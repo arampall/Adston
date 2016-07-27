@@ -120,14 +120,21 @@
 		
 	}	
 	
-	.video-footer .title, .video-footer .active_time, .queue-footer .title
+	.video-footer .active_time, .queue-footer .title
 	{
 		float:left;
 		font-weight:bold;
 		width:50%;
 	}
 	
-	.video-footer .brand, .queue-footer .brand
+	.video-footer .title, .video-footer .brand
+	{
+		float:left;
+		font-weight:bold;
+		width:100%;
+	}
+	
+	.queue-footer .brand
 	{
 		float:right;
 		font-weight:bold;

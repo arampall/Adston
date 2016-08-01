@@ -26,10 +26,18 @@ angular.module('video_app',[])
 			document.addEventListener("backbutton", backKeyDown, false);
 			var videos = JSON.parse($window.localStorage.getItem("daily_list"));
 			$scope.videos_daily = videos;
+			$scope.play=-1;
 			
-			$scope.getVideo = function(video_details){
-				$window.localStorage.setItem("video",JSON.stringify(video_details));
-				$window.location = "PlayScreen.html";				
+			
+			var today = new Date();
+			$scope.play = today.getHours()-10;
+			
+			
+			$scope.getVideo = function(video_details, index){
+				if($scope.play==index){
+					$window.localStorage.setItem("video",JSON.stringify(video_details));
+					$window.location = "PlayScreen.html";	
+				}			
 			};
 			
 			$scope.goToQueue = function(index){

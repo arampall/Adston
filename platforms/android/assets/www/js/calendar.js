@@ -3,8 +3,9 @@ angular.module('calendarEvent', ['ngAnimate', 'ui.bootstrap'])
 	$scope.timedisabled=false;
 	$scope.calendardisabled=false;
 	$scope.timeslots=[];
-	var time = ["10:22 am", "11:22 am", "12:22 pm", "01:22 pm", "02:22 pm", "03:22 pm", "04:22 pm","05:22 pm", "06:22 pm", "07:22 pm", "08:22 pm","09:22 pm", "10:22 pm"];
+	var time = ["10:22 am", "11:22 am", "12:22 pm", "01:22 pm", "02:22 pm", "03:22 pm", "04:22 pm","05:22 pm", "06:22 pm", "07:22 pm", "08:22 pm","09:22 pm"];
 	var scheduled_list = JSON.parse($window.localStorage.getItem("scheduled_list"));
+	var queue = JSON.parse($window.localStorage.getItem("queue_data"));
 	if(scheduled_list==null){
 		scheduled_list=[];
 	}
@@ -80,19 +81,27 @@ angular.module('calendarEvent', ['ngAnimate', 'ui.bootstrap'])
 	}
 	
 	
-	$scope.getTime=function(time){
+	$scope.getTime=function(time,index){
+		$scope.tempPosition = index;
 		$scope.settime = time;
 	}
 
 	$scope.selectTime=function(){
-		var video =JSON.parse($window.localStorage.getItem("tempVideo"));
+		var video = JSON.parse($window.sessionStorage.getItem("tempVideo"));
 		if($scope.settime==null){
 			$window.alert("Please select a time slot");
 		}else{
-			var dateObj ={date:$scope.tempdate,time:$scope.settime,video:video};
+			var dateObj ={date:$scope.tempdate,time:$scope.settime,position:$scope.tempPosition,video:video};
 			scheduled_list.push(dateObj);
 			$window.localStorage.setItem("scheduled_list",JSON.stringify(scheduled_list));
-			localStorage.removeItem("tempVideo");
+			for(var i=0;i<queue.length;i++){
+				if(queue[i].video_id == video.video_id){
+					queue.splice(i,1);
+					break;
+				}
+			}
+			$window.localStorage.setItem("queue_data",JSON.stringify(queue));
+			$window.localStorage.removeItem("tempVideo");
 			$window.location ="QueueScreen.html";
 		}	  
 	};
@@ -107,11 +116,11 @@ angular.module('calendarEvent', ['ngAnimate', 'ui.bootstrap'])
 				time_value = $filter("filter")(slots, {time:time[i]});
 				var slotObj={};
 				if(time_value.length>0){
-					slotObj = {"time":time[i],"info":"busy"};
+					slotObj = {"time":time[i],"info":"busy","position":i};
 					$scope.timeslots.push(slotObj);
 				}
 				else{
-					slotObj = {"time":time[i],"info":"free"};
+					slotObj = {"time":time[i],"info":"free","position":i};
 					$scope.timeslots.push(slotObj);
 				}
 			}

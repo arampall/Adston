@@ -86,29 +86,25 @@ http://buildinternet.com/2011/01/add-a-mobile-landing-page-to-your-site
 	<div id="video_container" class="container padding-top-px-2" style="height:100%">
 	
 		<div class="row height-100">
-			<div class="col-md-4 col-xs-6 height-30 margin-bottom-px-2" ng-repeat="video in videos_daily track by $index">
+			<div class="col-md-4 col-xs-6 height-30 margin-bottom-px-2" ng-repeat="video in videos_daily track by video.video_id">
 				<div id="1" class="video min-height-px-170" name="video-name" alt="1">
 					<div class="video-header">
 						<div class="header-background">
-							<span class="category text-uppercase padding-left-px-5">{{video.category}}</span>
+							<span class="category text-capitalize padding-left-px-5">{{video.category}}</span>
 							<div ng-click="goToQueue($index)" class="video-close">×</div>
 						</div>
 					</div>
-					<a ng-click="getVideo(video)"><img id="image1" ng-src="{{video.poster_url}}" width="130" height="170"/></a>
+					<a ng-click="getVideo(video, $index)"><img id="image1" ng-class="{'img-blur': $index!=play}" ng-src="{{video.poster_url}}" width="130" height="170"/>
+					<img id="overlay" ng-show="$index==play" src="img/play.png"/></a>
 					<div class="video-footer">
 						<div class="footer-background">
-							<div class="title text-left text-capitalize padding-left-px-5">{{video.video_title}}</div>
 							<div class="brand text-left text-capitalize padding-left-px-5">{{video.company_name}}</div>
+							<div class="title text-left text-capitalize padding-left-px-5">{{video.video_title}}</div>
 							<!--div class="active_time text-left padding-left-px-5">Active Till</div-->
-						</div>
-						
-						
-					</div>
-					
-				</div>
-			
-			</div>
-			
+						</div>						
+					</div>					
+				</div>			
+			</div>			
 		</div>		
 	</div>
 

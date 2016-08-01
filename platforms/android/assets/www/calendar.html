@@ -41,8 +41,8 @@
 		
 		</fieldset>
 		<div>
-		<fieldset ng-disabled="timedisabled" class="btn-group margin-left-px-35">
-			<button type="button" id="{{slot.time}}" class="btn" ng-class="{'btn-success': slot.info=='free', 'btn-danger': slot.info=='busy'}" style="margin:5px;font-size:16px;" ng-repeat="slot in timeslots" ng-click="getTime(slot.time)">{{slot.time}}</button>
+		<fieldset ng-disabled="timedisabled" class="btn-group row margin-left-px-35">
+			<button type="button" id="{{slot.time}}" class="btn" ng-class="{'btn-success': slot.info=='free', 'btn-danger': slot.info=='busy'}" style="margin:5px;font-size:16px;" ng-repeat="slot in timeslots" ng-click="getTime(slot.time,slot.position)">{{slot.time}}</button>
 			<button style="margin-left:200px; margin-top:10px;" type="button" class="btn btn-primary" ng-click="selectTime()">Set Time</button>
 		</fieldset>
 		</div>

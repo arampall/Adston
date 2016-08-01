@@ -1,0 +1,24 @@
+body.questionScreen
+{
+	background: rgba(3,3,3,1);
+	background: -moz-linear-gradient(left, rgba(3,3,3,1) 0%, rgba(82,78,78,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(3,3,3,1)), color-stop(100%, rgba(82,78,78,1)));
+	background: -webkit-linear-gradient(left, rgba(3,3,3,1) 0%, rgba(82,78,78,1) 100%);
+	background: -o-linear-gradient(left, rgba(3,3,3,1) 0%, rgba(82,78,78,1) 100%);
+	background: -ms-linear-gradient(left, rgba(3,3,3,1) 0%, rgba(82,78,78,1) 100%);
+	background: linear-gradient(to right, rgba(3,3,3,1) 0%, rgba(82,78,78,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#030303', endColorstr='#524e4e', GradientType=1 );
+	font-size:12px;
+	font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+.questionScreenContainer h4
+{
+	color: white;
+	margin: 0px 10px;
+	text-align: center-left;
+}

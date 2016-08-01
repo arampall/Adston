@@ -90,15 +90,16 @@ http://buildinternet.com/2011/01/add-a-mobile-landing-page-to-your-site
 				<div id="1" class="video min-height-px-170" name="video-name" alt="1">
 					<div class="video-header">
 						<div class="header-background">
-							<span class="category text-uppercase padding-left-px-5">{{video.category}}</span>
+							<span class="category text-capitalize padding-left-px-5">{{video.category}}</span>
 							<div ng-click="goToQueue($index)" class="video-close">×</div>
 						</div>
 					</div>
 					<a ng-click="getVideo(video)"><img id="image1" ng-src="{{video.poster_url}}" width="130" height="170"/></a>
 					<div class="video-footer">
 						<div class="footer-background">
-							<div class="title text-left text-capitalize padding-left-px-5">{{video.video_title}}</div>
 							<div class="brand text-left text-capitalize padding-left-px-5">{{video.company_name}}</div>
+							<div class="title text-left text-capitalize padding-left-px-5">{{video.video_title}}</div>
+							
 							<!--div class="active_time text-left padding-left-px-5">Active Till</div-->
 						</div>
 						

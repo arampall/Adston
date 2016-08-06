@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
 	
 
-    <title>Adston Cash Login</title>
+    <title>Question Screen</title>
     
     <link rel="stylesheet" href="css/mobile.css"/>
 	<link rel="stylesheet" href="css/main.css"/>
@@ -31,10 +31,35 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 		
+	<style>
 	
+		#answer-options .btn-group
+		{
+			width:100%;
+		}
+		
+		#answer-options div.radio label, #answer-options div.multiple label, #answer-options div.MR-multiple label
+		{
+			width:100%;
+			margin: 10px 20px;
+		}
+		
+		#answer-options div.radio label.active, #answer-options div.multiple label.active, #answer-options div.MR-multiple label.active
+		{
+			background: green;
+		}
+		
+		.MR-multiple button
+		{
+			width: 80%;
+			margin-top: 10px;
+		}
+		
+		
+	</style>
 	
 </head>
-<body class="main questionScreen" ng-app="login" ng-controller="checkLogin"  >
+<body class="main" ng-app="questionApp" ng-controller="questionCtrl"  >
 
 	
 	<div class="container questionScreenContainer" style="height:100%">
@@ -44,18 +69,122 @@
 			<h4 class="col-md-12">What is the reason for your Masters?</h4>
 		</div>
 		
+		<input type="hidden" ng-model="myVar"> 
+		
+		<div ng-switch="myVar" id="answer-options">
+			<div ng-switch-when="radio" class="radio">
+				<form>
+					<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					
+						<div class="btn-group" data-toggle="buttons">
+						  <label class="btn btn-primary">
+							<input type="radio" name="options" id="option1" value="True"> True
+						  </label>
+						  <label class="btn btn-primary">
+							<input type="radio" name="options" id="option2" value="False" > False
+						  </label>
+						  
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			<div ng-switch-when="multiple" class="multiple">
+				<form>
+					<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					
+						<div class="btn-group" data-toggle="buttons">
+						  <label class="btn btn-primary">
+							<input type="radio" name="options" id="option1"> option1
+						  </label>
+						  <label class="btn btn-primary">
+							<input type="radio" name="options" id="option2" > option2
+						  </label>
+						   <label class="btn btn-primary">
+							<input type="radio" name="options" id="option3"> option3
+						  </label>
+						  
+						</div>
+					</div>
+				</form>
+			
+			
+			
+			</div>
+			
+			<div ng-switch-when="MR-multiple" class="MR-multiple">
+				<form>
+				
+				<div class="row">
+				
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<span class="button-checkbox">
+							<button type="button" class="btn" data-color="primary">Option 1</button>
+							<input type="checkbox" class="hidden" />
+						</span>
+					</div>
+					
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<span class="button-checkbox">
+							<button type="button" class="btn" data-color="primary">Option 2</button>
+							<input type="checkbox" class="hidden" />
+						</span>
+					</div>
+					
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<span class="button-checkbox">
+							<button type="button" class="btn" data-color="primary">Option 3</button>
+							<input type="checkbox" class="hidden" />
+						</span>
+					</div>
+					
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<span class="button-checkbox">
+							<button type="button" class="btn" data-color="primary">Option 4</button>
+							<input type="checkbox" class="hidden" />
+						</span>
+					</div>
+					
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<span class="button-checkbox">
+							<button type="button" class="btn" data-color="primary">Option 5</button>
+							<input type="checkbox" class="hidden" />
+						</span>
+					</div>
+					
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<span class="button-checkbox">
+							<button type="button" class="btn" data-color="primary">Option 6</button>
+							<input type="checkbox" class="hidden" />
+						</span>
+					</div>
+					
+					
+				</div>
+				
+								
+					
+				</form>
+			
+			</div>
+			<div ng-switch-default>
+			<h1>Switch</h1>
+			<p>Select topic from the dropdown, to switch the content of this DIV.</p>
+			</div>
+		</div>
+		
 		
 		
 		<!-- Options will come here -->
 		
-		<div class="options">
+		<!--div class="options">
 		
-			<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 nomargin padding-top-px-10"> <!-- ng-repeat -->
-				<div class="btn btn-primary btn-block">Option 1</div> <!-- ng-click change the button css class from btn-primary to btn-success -->
+			<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 nomargin padding-top-px-10"> 
+				<div class="btn btn-primary btn-block">Option 1</div> 
 			</div>
 			
 			<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 nomargin padding-top-px-10">
-				<div class="btn btn-success btn-block">Option 2</div> <!-- onclick -->
+				<div class="btn btn-success btn-block">Option 2</div> 
 			</div>
 			
 			<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 nomargin padding-top-px-10">
@@ -68,14 +197,89 @@
 			
 			
 			
-		</div>
+		</div-->
 		
 		
 		
 	
 	</div>
 	
+	<script>
 	
+
+		var app = angular.module('questionApp', []);
+		app.controller('questionCtrl', function($scope) {
+			$scope.myVar = "multiple";
+		});
+
+		
+	
+		$(function () {
+			$('.button-checkbox').each(function () {
+
+				// Settings
+				var $widget = $(this),
+					$button = $widget.find('button'),
+					$checkbox = $widget.find('input:checkbox'),
+					color = $button.data('color'),
+					settings = {
+						on: {
+							icon: 'glyphicon glyphicon-check'
+						},
+						off: {
+							icon: 'glyphicon glyphicon-unchecked'
+						}
+					};
+
+				// Event Handlers
+				$button.on('click', function () {
+					$checkbox.prop('checked', !$checkbox.is(':checked'));
+					$checkbox.triggerHandler('change');
+					updateDisplay();
+				});
+				$checkbox.on('change', function () {
+					updateDisplay();
+				});
+
+				// Actions
+				function updateDisplay() {
+					var isChecked = $checkbox.is(':checked');
+
+					// Set the button's state
+					$button.data('state', (isChecked) ? "on" : "off");
+
+					// Set the button's icon
+					$button.find('.state-icon')
+						.removeClass()
+						.addClass('state-icon ' + settings[$button.data('state')].icon);
+
+					// Update the button's color
+					if (isChecked) {
+						$button
+							.removeClass('btn-default')
+							.addClass('btn-' + color + ' active');
+					}
+					else {
+						$button
+							.removeClass('btn-' + color + ' active')
+							.addClass('btn-default');
+					}
+				}
+
+				// Initialization
+				function init() {
+
+					updateDisplay();
+
+					// Inject the icon if applicable
+					if ($button.find('.state-icon').length == 0) {
+						$button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
+					}
+				}
+				init();
+			});
+		});
+	</script>
 	
 	
 	

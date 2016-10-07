@@ -11,8 +11,8 @@
             $scope.submitForm = function(){
                 $http({
                 method :'POST',
-                //url:'http://54.208.229.254/user_controller.php',
-				url:'http://localhost:81/test/user_controller.php',
+                url:'http://54.208.229.254/user_controller.php',
+				//url:'http://localhost:81/test/user_controller.php',
                 data:$scope.user,
                 headers:{'Content-Type':'application/x-www-form-urlencoded'}
                 })

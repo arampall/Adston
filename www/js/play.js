@@ -13,8 +13,8 @@
 		var auth = $window.localStorage.getItem("access_token");
 		$http({
 			method :'POST',
-			//url:'http://54.208.229.254/video_controller.php',
-			url:'http://localhost:81/test/video_controller.php',
+			url:'http://54.208.229.254/video_controller.php',
+			//url:'http://localhost:81/test/video_controller.php',
 			data: {video_id : video.video_id, auth_token : auth},
 			headers:{'Content-Type':'application/x-www-form-urlencoded'}
 			})

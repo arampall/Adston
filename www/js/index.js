@@ -8,6 +8,7 @@
 				var elem1 = document.getElementById("loadBar1"); 
 				var width = 1;
 				var id = setInterval(frame, 20);
+				console.log("hi");
 				function frame() {
 					if (width >= 100) {
 						clearInterval(id);
@@ -27,8 +28,8 @@
 			function accessValidator(){
                 $http({
                 method :'POST',
-                //url:'http://54.208.229.254/user_controller.php',
-				url:'http://localhost:81/test/user_controller.php',
+                url:'http://54.208.229.254/user_controller.php',
+				//url:'http://localhost:81/test/user_controller.php',
                 data:{access_token:$window.localStorage.getItem("access_token"),method:'access'},
                 headers:{'Content-Type':'application/x-www-form-urlencoded'}
                 })

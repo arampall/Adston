@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html> 
 <html> 
 <head> 
@@ -161,4 +162,205 @@
 	</div>
 </div>
 </body>
+=======
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+	
+
+    <title>Adston Cash Sign Up</title>
+    
+    <link rel="stylesheet" href="css/mobile.css"/>
+	<link rel="stylesheet" href="css/main.css"/>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	
+	<link rel="stylesheet" href="css/bootstrap.css" >
+	
+	<link rel="stylesheet" href="css/bootstrap-social.css" >
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<script src="js/bootstrap.js" ></script>
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+		
+	<style>
+	
+		.gender-group label
+		{
+			width:50%;
+		}
+	
+		.gender-group
+		{
+			width:100%;
+		}
+		
+		.gender-label
+		{
+			margin: 8px 0px;
+			text-align: left;
+		}
+		
+		.terms-div
+		{
+			height:100px;
+			overflow-y:scroll;
+		}
+		
+		
+	</style>
+	
+</head>
+<body class="main " ng-app="signup" ng-controller="signupCtrl"  >
+
+	<header class="header-png" style="display: table; width:100%">
+				<p>Adston Cash Create Account</p>
+	</header>
+	
+	<div class="container">
+	
+		
+		
+		
+			
+			<div class="padding-top-2">
+				<form id="login" method="post" ng-submit="submitForm()">
+					<div class="form-group col-sm-6 col-xs-12 col-md-6">
+						<input type="text" class="form-control" name="user_fname" id="user_fname" placeholder="First Name" required>
+					</div>
+					<div class="form-group col-sm-6 col-xs-12 col-md-6">
+						<input type="text" class="form-control" name="user_lname" id="user_lname" placeholder="Last Name" ng-model="user.user_pass" required>
+					</div>
+					
+					<div class="form-group col-sm-6 col-xs-12 col-md-6">
+						<input type="date" class="form-control" name="date_of_birth" id="date_of_birth" placeholder="Date of Birth" required>
+					</div>
+					<div class="form-group col-sm-6 col-xs-12 col-md-6">
+						<input type="text" class="form-control" name="user_phone" id="user_phone" placeholder="Contact Number" required>
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" class="form-control" name="user_address1" id="user_address1" placeholder="Address 1" required>
+					</div>
+					<div class="form-group col-sm-6 col-xs-12 col-md-6">
+						<input type="text" class="form-control" name="user_address2" id="user_address2" placeholder="Address 2" required>
+					</div>
+					
+					<div class="form-group col-sm-6 col-xs-12 col-md-6">
+						<input type="text" class="form-control" name="user_city" id="user_city" placeholder="City" required>
+					</div>
+					
+					<div class="form-group col-sm-6 col-xs-12 col-md-6">
+						<input type="text" class="form-control" name="user_state" id="user_state" placeholder="State" required>
+					</div>
+					
+					<div class="form-group col-sm-6 col-xs-12 col-md-6">
+						<input type="text" class="form-control" name="user_zip" id="user_zip" placeholder="Zip Code" required>
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="email" class="form-control" name="user_email" id="user_email" placeholder="Email Id" required>
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<label class="col-xs-2 control-label gender-label" >Gender</label>
+						<div class="col-xs-10">
+							<div class="btn-group gender-group" data-toggle="buttons">
+								<label class="btn btn-default text-left">
+									<input type="radio" name="gender" value="male" /> Male
+								</label>
+								<label class="btn btn-default">
+									<input type="radio" name="gender" value="female" /> Female
+								</label>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group col-sm-6 col-xs-12 col-md-6">
+						<input type="text" class="form-control" name="user_phrase" id="user_phrase" placeholder="Your 'win some cash' phrase" required>
+					</div>
+					
+					<div class="form-group col-sm-6 col-xs-12 col-md-6">
+						<input type="text" class="form-control" name="user_account" id="user_account" placeholder="Paypal Mobile or Account Number" required>
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" class="form-control" name="user_mobile" id="user_mobile" placeholder="Mobile Number" required>
+					</div>
+				
+					<hr>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="password" class="form-control" name="user_pass" id="user_pass" placeholder="Password" required>
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="password" class="form-control" name="user_cpass" id="user_cpass" placeholder="Confirm Password" required>
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="password" class="form-control" name="user_cpass" id="user_cpass" placeholder="Confirm Password" required>
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<div class="checkbox text-left">
+							<label><input type="checkbox" value="">I agreee to the term of use as stated below</label>
+							<div class="form-control terms-div">Terms of use for the adston cash mobile application.</div>
+						</div>
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+				</form>
+			
+			</div>
+			
+			
+		
+		
+		<div class="footer padding-top-px-25 margin-bottom-px-10">
+		
+			<div class="form-group col-sm-6 col-xs-12 col-md-6">
+						<a href="Login.html"> Go to Login Page </a>
+					</div>
+					
+			<div class="form-group col-sm-6 col-xs-12 col-md-6">
+				<input type="submit" name="submit" class="btn btn-primary btn-block" value="Create Account">
+			</div>
+			
+			
+			
+		</div>
+		
+	
+	</div>
+	
+	
+	
+	
+	
+	
+</body>
+>>>>>>> 843ee692339ba49c7a2d54244cb8817c37507f44
 </html>

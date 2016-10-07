@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html> 
 <html> 
 <head> 
@@ -315,4 +316,294 @@
 	
 	
 </body>
+=======
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+	
+
+    <title>Question Screen</title>
+    
+    <link rel="stylesheet" href="css/mobile.css"/>
+	<link rel="stylesheet" href="css/main.css"/>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	
+	<link rel="stylesheet" href="css/bootstrap.css" >
+	
+	<link rel="stylesheet" href="css/bootstrap-social.css" >
+	
+	<link rel="stylesheet" href="css/questionScreen.css" >
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<script src="js/bootstrap.js" ></script>
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+		
+	<style>
+	
+		#answer-options .btn-group
+		{
+			width:100%;
+		}
+		
+		#answer-options div.radio label, #answer-options div.multiple label, #answer-options div.MR-multiple label
+		{
+			width:100%;
+			margin: 10px 20px;
+		}
+		
+		#answer-options div.radio label.active, #answer-options div.multiple label.active, #answer-options div.MR-multiple label.active
+		{
+			background: green;
+		}
+		
+		.MR-multiple button
+		{
+			width: 80%;
+			margin-top: 10px;
+		}
+		
+		
+	</style>
+	
+</head>
+<body class="main" ng-app="questionApp" ng-controller="questionCtrl"  >
+
+	
+	<div class="container questionScreenContainer" style="height:100%">
+	
+		<div class="row height-20 margin-top-10 ">
+				<!-- Question will come here between strong tags -->
+			<h4 class="col-md-12">What is the reason for your Masters?</h4>
+		</div>
+		
+		<input type="hidden" ng-model="myVar"> 
+		
+		<div ng-switch="myVar" id="answer-options">
+			<div ng-switch-when="radio" class="radio">
+				<form>
+					<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					
+						<div class="btn-group" data-toggle="buttons">
+						  <label class="btn btn-primary">
+							<input type="radio" name="options" id="option1" value="True"> True
+						  </label>
+						  <label class="btn btn-primary">
+							<input type="radio" name="options" id="option2" value="False" > False
+						  </label>
+						  
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			<div ng-switch-when="multiple" class="multiple">
+				<form>
+					<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					
+						<div class="btn-group" data-toggle="buttons">
+						  <label class="btn btn-primary">
+							<input type="radio" name="options" id="option1"> option1
+						  </label>
+						  <label class="btn btn-primary">
+							<input type="radio" name="options" id="option2" > option2
+						  </label>
+						   <label class="btn btn-primary">
+							<input type="radio" name="options" id="option3"> option3
+						  </label>
+						  
+						</div>
+					</div>
+				</form>
+			
+			
+			
+			</div>
+			
+			<div ng-switch-when="MR-multiple" class="MR-multiple">
+				<form>
+				
+				<div class="row">
+				
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<span class="button-checkbox">
+							<button type="button" class="btn" data-color="primary">Option 1</button>
+							<input type="checkbox" class="hidden" />
+						</span>
+					</div>
+					
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<span class="button-checkbox">
+							<button type="button" class="btn" data-color="primary">Option 2</button>
+							<input type="checkbox" class="hidden" />
+						</span>
+					</div>
+					
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<span class="button-checkbox">
+							<button type="button" class="btn" data-color="primary">Option 3</button>
+							<input type="checkbox" class="hidden" />
+						</span>
+					</div>
+					
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<span class="button-checkbox">
+							<button type="button" class="btn" data-color="primary">Option 4</button>
+							<input type="checkbox" class="hidden" />
+						</span>
+					</div>
+					
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<span class="button-checkbox">
+							<button type="button" class="btn" data-color="primary">Option 5</button>
+							<input type="checkbox" class="hidden" />
+						</span>
+					</div>
+					
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<span class="button-checkbox">
+							<button type="button" class="btn" data-color="primary">Option 6</button>
+							<input type="checkbox" class="hidden" />
+						</span>
+					</div>
+					
+					
+				</div>
+				
+								
+					
+				</form>
+			
+			</div>
+			<div ng-switch-default>
+			<h1>Switch</h1>
+			<p>Select topic from the dropdown, to switch the content of this DIV.</p>
+			</div>
+		</div>
+		
+		
+		
+		<!-- Options will come here -->
+		
+		<!--div class="options">
+		
+			<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 nomargin padding-top-px-10"> 
+				<div class="btn btn-primary btn-block">Option 1</div> 
+			</div>
+			
+			<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 nomargin padding-top-px-10">
+				<div class="btn btn-success btn-block">Option 2</div> 
+			</div>
+			
+			<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 nomargin padding-top-px-10">
+				<div class="btn btn-primary btn-block">Option 3</div>
+			</div>
+			
+			<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 nomargin padding-top-px-10">
+				<div class="btn btn-primary btn-block">Option 4</div>
+			</div>
+			
+			
+			
+		</div-->
+		
+		
+		
+	
+	</div>
+	
+	<script>
+	
+
+		var app = angular.module('questionApp', []);
+		app.controller('questionCtrl', function($scope) {
+			$scope.myVar = "multiple";
+		});
+
+		
+	
+		$(function () {
+			$('.button-checkbox').each(function () {
+
+				// Settings
+				var $widget = $(this),
+					$button = $widget.find('button'),
+					$checkbox = $widget.find('input:checkbox'),
+					color = $button.data('color'),
+					settings = {
+						on: {
+							icon: 'glyphicon glyphicon-check'
+						},
+						off: {
+							icon: 'glyphicon glyphicon-unchecked'
+						}
+					};
+
+				// Event Handlers
+				$button.on('click', function () {
+					$checkbox.prop('checked', !$checkbox.is(':checked'));
+					$checkbox.triggerHandler('change');
+					updateDisplay();
+				});
+				$checkbox.on('change', function () {
+					updateDisplay();
+				});
+
+				// Actions
+				function updateDisplay() {
+					var isChecked = $checkbox.is(':checked');
+
+					// Set the button's state
+					$button.data('state', (isChecked) ? "on" : "off");
+
+					// Set the button's icon
+					$button.find('.state-icon')
+						.removeClass()
+						.addClass('state-icon ' + settings[$button.data('state')].icon);
+
+					// Update the button's color
+					if (isChecked) {
+						$button
+							.removeClass('btn-default')
+							.addClass('btn-' + color + ' active');
+					}
+					else {
+						$button
+							.removeClass('btn-' + color + ' active')
+							.addClass('btn-default');
+					}
+				}
+
+				// Initialization
+				function init() {
+
+					updateDisplay();
+
+					// Inject the icon if applicable
+					if ($button.find('.state-icon').length == 0) {
+						$button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
+					}
+				}
+				init();
+			});
+		});
+	</script>
+	
+	
+	
+	
+	
+</body>
+>>>>>>> 843ee692339ba49c7a2d54244cb8817c37507f44
 </html>

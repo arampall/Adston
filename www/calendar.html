@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="calendarEvent">
+<html ng-app="adston-cash">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;" />
@@ -18,7 +18,10 @@
 	<script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.0.0.js"></script>
 
 	<style>
-
+		.uib{
+			padding:0px;
+		}
+		
 		div.uib th{
 			font-size:large;
 		}
@@ -30,10 +33,21 @@
 		div.uib table{
 			width:100%;
 		}
+		
+		div.uib td button{
+			padding:10px;
+		}
+		
 
 	</style>
 </head>
 <body class="main">
+
+<header class="header-png" style="display: table; width:100%">				
+			<p>Calendar</p>
+	</header>
+	
+	
 <div class="container">
 	<div ng-controller='DatepickerDemoCtrl'><!--"DatepickerDemoCtrl-->
 		<fieldset class="row" ng-disabled="calendardisabled">
@@ -41,13 +55,17 @@
 		
 		</fieldset>
 		<div>
-		<fieldset ng-disabled="timedisabled" class="btn-group row margin-left-px-35">
-			<button type="button" id="{{slot.time}}" class="btn" ng-class="{'btn-success': slot.info=='free', 'btn-danger': slot.info=='busy'}" style="margin:5px;font-size:16px;" ng-repeat="slot in timeslots" ng-click="getTime(slot.time,slot.position)">{{slot.time}}</button>
-			<button style="margin-left:200px; margin-top:10px;" type="button" class="btn btn-primary" ng-click="selectTime()">Set Time</button>
-		</fieldset>
+			<fieldset ng-disabled="timedisabled" class="btn-group row margin-left-px-35">
+				<button type="button" id="{{slot.time}}" ng-disabled="slot.info=='busy'" class="btn" ng-class="{'btn-success': slot.info=='free', 'btn-danger': slot.info=='busy'}" style="margin:5px;font-size:16px;" ng-repeat="slot in timeslots" ng-click="getTime(slot.time,slot.position)">{{slot.time}}</button>
+			</fieldset>
+			<div class="row m-x-auto">
+				<button class="btn btn-default col-xs-6 col-md-6">Cancel</button>
+				<button class="btn btn-primary col-xs-6 col-md-6" ng-click="selectTime()">Set Time</button>
+			</div>
 		</div>
+	</div>
 </div>
-</div>
+	<script type="text/javascript" src="js/app.js"></script>
 	<script src="js/calendar.js" type="text/javascript"></script>
 	
 </body>

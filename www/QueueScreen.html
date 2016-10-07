@@ -39,12 +39,13 @@ http://buildinternet.com/2011/01/add-a-mobile-landing-page-to-your-site
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.3.0.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/queue.js"></script>	
 	
 	
 </head>
-<body class="main" ng-app="video_queue" ng-controller="queue-ctrl">
+<body class="main" ng-app="adston-cash" ng-controller="queue-ctrl">
 
 	<header class="header-png" style="display: table; width:100%">
 	
@@ -97,7 +98,7 @@ http://buildinternet.com/2011/01/add-a-mobile-landing-page-to-your-site
 	</header>
 	<div id="video_container" class="container padding-top-2 nopadding" style="height:100%">
 		<div id="accordion">
-			<li ng-repeat="category in category_list">
+			<li class = "label_category" ng-repeat="category in category_list">
 				<h3>{{category}}</h3>
 				<div class = "accordion-container">
 					<div class="row height-100">

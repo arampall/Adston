@@ -19,10 +19,10 @@ $(function(){
 	})
 })
 
-angular.module('video_queue',[])
-		.controller('queue-ctrl',function($scope,$http,$window,$sce,$filter){
+	adston.controller('queue-ctrl',function($scope,$http,$window,$sce,$filter){
 		var queue = JSON.parse($window.localStorage.getItem("queue_data"));
-		var daily_list = JSON.parse($window.localStorage.getItem("daily_list"));
+		var list = JSON.parse($window.localStorage.getItem("daily_list"));
+		var daily_list = list['videos'];
 		var scheduled_array=JSON.parse($window.localStorage.getItem("scheduled_list"))
 		document.addEventListener("backbutton", backKeyDown, false);
 		console.log(scheduled_array);
@@ -64,7 +64,8 @@ angular.module('video_queue',[])
 					}	
 					$window.localStorage.setItem("queue_data",JSON.stringify(queue_change));
 					$window.localStorage.removeItem("index");
-					$window.localStorage.setItem("daily_list",JSON.stringify(daily_list));
+					list['videos'] = daily_list;
+					$window.localStorage.setItem("daily_list",JSON.stringify(list));
 					$window.location = "VideoScreen.html";
 				}	
 				else {

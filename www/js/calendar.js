@@ -1,4 +1,4 @@
-angular.module('calendarEvent', ['ngAnimate', 'ui.bootstrap'])
+angular.module('adston-cash',['ngAnimate', 'ui.bootstrap'])
 	.controller('DatepickerDemoCtrl', function ($scope,$window,$sce,$filter) {
 	$scope.timedisabled=false;
 	$scope.calendardisabled=false;

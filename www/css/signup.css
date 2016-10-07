@@ -1,0 +1,19 @@
+
+.err{
+border:solid 2px red;
+}
+.gender-group{
+			width:100%;
+}
+		
+.gender-label{
+			margin: 8px 0px;
+			text-align: left;
+}
+.terms-div{
+			height:100px;
+			overflow-y:scroll;
+}
+.genderButton{
+			width:50%;
+		}

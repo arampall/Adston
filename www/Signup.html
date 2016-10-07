@@ -1,0 +1,164 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+	
+
+    <title>Adston Cash Sign Up</title>
+    
+    <link rel="stylesheet" href="css/mobile.css"/>
+	<link rel="stylesheet" href="css/main.css"/>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	
+	<link rel="stylesheet" href="css/bootstrap.css" >
+	
+	<link rel="stylesheet" href="css/bootstrap-social.css" >
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/signup.css">
+
+	<script src="js/bootstrap.js" ></script>
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/signup.js"></script>
+	
+</head>
+<body class="main " ng-app="signup" ng-controller="signupCtrl" >
+
+	<header class="header-png" style="display: table; width:100%">
+				<p>Create Account</p>
+	</header>
+	
+	<div class="container">
+	 <div class="row">
+		
+			<div class="padding-top-2">
+				<form name="myForm" id="signup" method="post" ng-submit="createAccount()">
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" name="user_fname" ng-model="user.user_fname" ng-pattern="patternObj.text" required ng-trim="False" class="form-control" id="user_fname" placeholder="First Name" autocomplete="off">
+						<div role="alert">
+							<span style="color:red;font-size:16px;" class="error" ng-show="myForm.user_fname.$error.pattern">Only alphabets</span>
+						</div>
+					</div>
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" name="user_lname" ng-model="user.user_lname" ng-pattern="patternObj.text" required ng-trim="False" class="form-control" id="user_lname" placeholder="Last Name" autocomplete="off">
+						<div role="alert">
+							<span style="color:red;font-size:16px;" class="error" ng-show="myForm.user_lname.$error.pattern">Only alphabets</span>
+						</div>
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" class="form-control" placeholder="Date of Birth" onfocus="(this.type='date')" ng-model="user.user_dob" ng-class="date" required autocomplete="off">
+						<div ng-bind-html="doberror"></div>
+					</div>
+	
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" class="form-control" name="user_contact" placeholder="Contact Number" ng-model="user.user_contact" ng-pattern="patternObj.number" ng-class="mob" required autocomplete="off">
+						<div role="alert">
+							<span style="color:red;font-size:16px;" class="error" ng-show="myForm.user_contact.$error.pattern">Not a valid number</span>
+						</div>
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" class="form-control" name="user_address1" id="user_address1" placeholder="Address 1" ng-model="user.user_address_line1" required autocomplete="off">
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" class="form-control" name="user_address2" id="user_address2" placeholder="Address 2" ng-model="user.user_address_line2" autocomplete="off">
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" name="user_state" ng-model="user.user_state" ng-click="getState()" required ng-trim="False" class="form-control" id="user_state" placeholder="State" autocomplete="off">
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" class="form-control" name="user_city" ng-model="user.user_address_city" ng-pattern="patternObj.text" placeholder="City" required autocomplete="off">
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" name="user_zip" ng-model="user.user_address_zip" ng-class="zip" ng-pattern="patternObj.zip" required ng-trim="False" class="form-control" id="user_zip" placeholder="Zip Code" autocomplete="off" >
+						<div role="alert">
+							<span style="color:red;font-size:16px;" class="error" ng-show="myForm.user_zip.$error.pattern">Invalid Zip</span>
+						</div>
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="email" name="user_email" ng-model="user.user_emailid" ng-pattern="patternObj.email" required ng-trim="False" class="form-control" id="user_email" placeholder="Email Id" autocomplete="off">
+						<div role="alert">
+							<span style="color:red;font-size:16px;" class="error" ng-show="myForm.user_email.$error.pattern">Not a valid Email</span>
+						</div>
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<label class="col-xs-2 control-label gender-label" >Gender</label>
+						<div class="col-xs-10">
+							<div class="btn-group gender-group" ng-init="style={'border':'solid 1px green'}" ng-class="gend" data-toggle="buttons">
+								
+									<button class="btn btn-default text-left genderButton" type="submit" name="gender" id="male" ng-style="style1" ng-click="style1=style;style2=null;getGender($event)">Male</button>
+								
+									<button  class="btn btn-default genderButton" type="submit" name="gender" id="female" ng-style="style2" ng-click="style1=null;style2=style;getGender($event)"> Female</button>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" class="form-control" name="user_phrase" id="user_phrase" placeholder="Your 'win some cash' phrase" ng-model="user.user_cashphrase"  required autocomplete="off">
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" class="form-control" name="user_account" id="user_account" placeholder="Paypal Mobile or Account Number" ng-model="user.user_paypalnumber" required autocomplete="off">
+					</div>
+				
+					<hr>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="text" class="form-control" name="username" id="username" placeholder="Username" ng-model="user.user_username" required autocomplete="off">
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="password" class="form-control" placeholder="Password" id="pw1" ng-model="user.user_pwd" ng-class="pwd" required autocomplete="off">
+					</div>
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<input type="password" class="form-control" placeholder="Confirm Password" ng-model="user.user_confirmpwd" ng-class="pwd" pw-check="pw1" required autocomplete="off">
+						<div role="alert">
+						<span style="color:red;font-size:16px;" class="error" ng-show="user.user_pwd!=user.user_confirmpwd">Password Mismatch</span>
+						</div>
+					</div>
+					
+			
+					
+					<div class="form-group col-sm-12 col-xs-12 col-md-12">
+						<div class="checkbox text-left">
+							<label ng-class="check"><input type="checkbox" value="" ng-model="user.condition_check" required>I agreee to the term of use as stated below</label>
+							<div class="form-control terms-div">Terms of use for the adston cash mobile application.</div>
+						</div>
+					</div>
+					
+					<div class="footer padding-top-px-25 margin-bottom-px-10">
+		
+					<div class="form-group col-sm-6 col-xs-12 col-md-6">
+						<a href="Login.html"> Go to Login Page </a>
+					</div>
+					
+					<div class="form-group col-sm-6 col-xs-12 col-md-6">
+						<input type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid" style="width:100%" value="Create Account">
+					</div>
+			</div>
+					
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
